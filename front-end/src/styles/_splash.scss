@@ -27,7 +27,7 @@
     border-radius: 2px;
     transition: .2s ease-in-out;
     padding: 5px 10px;
-    // letter-spacing: 5px;
+    outline: none;
   }
 
   button:hover { 
@@ -41,12 +41,12 @@
   }
 
   p {
-    // color: $primary-color;
+    // font-family: $header-font;
   }
 
   .text-container {
     margin-top: -300px;
-    background-color: rgba(white, .3);
+    background-color: rgba(white, .4);
     padding: 30px;
     border-radius: 2px;
     
