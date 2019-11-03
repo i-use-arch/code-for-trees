@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/mode-javascript";
+
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-eclipse";
 import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-xcode";
 
 class Problem extends Component {
-  state = {  }
+  state = {}
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      code: "",
+    }
+  }
+
+  onChange = (code) => {
+    console.log(code);
+  }
+
   render() { 
     return (
       <div id="problem">
@@ -27,19 +43,20 @@ class Problem extends Component {
           <select>
             <option value="python">Python</option>
             <option value="java">Java</option>
-            <option value="go">Go</option>
+            <option value="javascript">JavaScript</option>
           </select>
           <div className="editor-container">
             <AceEditor
-              mode="java"
-              theme="eclipse"
+              mode="python"
+              theme="xcode"
               width="100%"
               height="500px"
               showPrintMargin={false}
               editorProps={{ $blockScrolling: true }}
+              onChange={this.onChange}
             />
           </div>
-          <button>SUBMIT</button>
+          <button onClick={() => console.log("HERE", this.state.code)}>SUBMIT</button>
         </div>
       </div>
     );
