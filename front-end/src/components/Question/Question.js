@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 export default function Question(props) {
-  // const classes = useStyles();
   const { question, description } = props;
 
   return (

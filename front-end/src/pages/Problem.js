@@ -14,11 +14,12 @@ class Problem extends Component {
       code: "",
       language: "python",
       codeHeader: {
-        python: 'def solution(nums, target):',
-        java: 'public int[] solution(int[] nums, int target) {\n\n}',
-        javascript: 'var solution = function(nums, target) {\n\n}',
+        python: '',
+        java: 'public static void main(String[] args) {\n\n}',
+        javascript: '',
       },
-      loading: false
+      loading: false,
+      success: ""
     }
   }
 
@@ -30,9 +31,47 @@ class Problem extends Component {
     this.setState({ code });
   };
 
-  onSubmit = () => {
-    console.log(this.state.code);
+  onSubmit = async () => {
     this.setState({ loading: true });
+    console.log(this.state.code);
+    const url = "http://167.114.115.234:8080/submission/post";
+    const id = await fetch(url, {
+      method: 'POST',
+      body: this.state.code,
+    });
+
+    console.log(id);
+
+    setTimeout(() => this.setState({ success: this.state.code !== "", loading: false }), 2000);
+
+  }
+
+  checkSuccess = async (id) => {
+    const getUrl = `http://167.114.115.234:8080/submission/${id}`;
+    console.log(getUrl);
+
+    const response = await fetch(getUrl);
+    const body = await response.json();
+
+    console.log(body);
+    console.log(body.output);
+
+    this.setState({ success: true, loading: false });
+  }
+
+  getEditorClasses = () => {
+    let classes = "editor-container";
+    if(this.state.loading) {
+      classes += " overlay";
+    }
+    if(this.state.success !== "") {
+      if(this.state.success) {
+        classes += " success";
+      } else {
+        classes += " fail";
+      }
+    }
+    return classes
   }
 
   render() { 
@@ -63,7 +102,7 @@ class Problem extends Component {
             <option value="java">Java</option>
             <option value="javascript">JavaScript</option>
           </select>
-          <div className={this.state.loading ? "editor-container overlay" : "editor-container"}>
+          <div className={this.getEditorClasses()}>
             {this.state.loading ? 
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" className="loading-icon"/> :
               ""

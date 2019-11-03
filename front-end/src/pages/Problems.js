@@ -81,6 +81,12 @@ class Problems extends Component {
               <Grid item>
                 <Question question="Balanced Binary Tree" />
               </Grid>
+              <Grid item>
+                <Question question="Binary Tree Preorder Traversal" />
+              </Grid>
+              <Grid item>
+                <Question question="Binary Tree Postorder Traversal" />
+              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={4}>

@@ -80,8 +80,19 @@
     }
 
     .overlay {
+      transition: .2s ease-in-out;
       background-color: black;
       pointer-events: none;
+    }
+    
+    .success {
+      background-color: green;
+      transition: .2s ease-in-out;
+    }
+
+    .fail {
+      background-color: red;
+      transition: .2s ease-in-out;
     }
   
     #ace-editor {
