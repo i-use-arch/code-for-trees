@@ -14,7 +14,7 @@
   font-family: "Montserrat, sans-serif";
 
   .MuiPaper-root {
-    background-color: rgba(white, .9);
+    background-color: rgba(white, 0.9);
   }
 
   .right-card {
@@ -24,32 +24,46 @@
   .question {
     margin: 0px 15px;
     border-radius: 0px;
-    
+
     .MuiCardContent-root {
       padding-bottom: 0px;
     }
   }
 
-  .right-panel {
+  .link {
+    text-decoration: none;
+    text-decoration-color: none;
 
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  .right-panel {
     .separator {
       display: flex;
       align-items: center;
       text-align: center;
     }
-    .separator::before, .separator::after {
-        content: '';
-        flex: 1;
-        border-bottom: 1px solid $secondary-color;
+    .separator::before,
+    .separator::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid $secondary-color;
     }
     .separator::before {
-        margin-right: 25px;
+      margin-right: 25px;
     }
     .separator::after {
-        margin-left: 25px;
+      margin-left: 25px;
     }
-  
-    h1, h2 {
+
+    h1,
+    h2 {
       text-align: center;
     }
 
@@ -71,20 +85,17 @@
     width: 100%;
     font-family: $body-font;
     font-weight: lighter;
-    
+
     td {
       padding: 10px;
     }
 
     tr:nth-child(odd) {
-      background-color: rgba($neutral-color, .5);
+      background-color: rgba($neutral-color, 0.5);
     }
-
 
     tr:nth-child(1) {
-      background-color: rgba($primary-color, .7);
+      background-color: rgba($primary-color, 0.7);
     }
-
   }
-
 }
