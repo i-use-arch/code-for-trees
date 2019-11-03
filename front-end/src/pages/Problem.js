@@ -14,11 +14,12 @@ class Problem extends Component {
       code: "",
       language: "python",
       codeHeader: {
-        python: 'def solution(nums, target):',
-        java: 'public int[] solution(int[] nums, int target) {\n\n}',
-        javascript: 'var solution = function(nums, target) {\n\n}',
+        python: '',
+        java: 'public static void main(String[] args) {\n\n}',
+        javascript: '',
       },
-      loading: false
+      loading: false,
+      success: ""
     }
   }
 
@@ -30,9 +31,31 @@ class Problem extends Component {
     this.setState({ code });
   }
 
-  onSubmit = () => {
+  onSubmit = async () => {
     console.log(this.state.code);
+    const url = "";
+    await fetch(url, {
+      method: 'POST',
+      body: this.state.code,
+    });
+
+    // setTimeout(refresh, 5000);
     this.setState({ loading: true });
+  }
+
+  getEditorClasses = () => {
+    let classes = "editor-container";
+    if(this.state.loading) {
+      classes += " overlay";
+    }
+    if(this.state.success !== "") {
+      if(this.state.success) {
+        classes += " success";
+      } else {
+        classes += " fail";
+      }
+    }
+    return classes
   }
 
   render() { 
@@ -57,7 +80,7 @@ class Problem extends Component {
             <option value="java">Java</option>
             <option value="javascript">JavaScript</option>
           </select>
-          <div className={this.state.loading ? "editor-container overlay" : "editor-container"}>
+          <div className={this.getEditorClasses()}>
             {this.state.loading ? 
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" className="loading-icon"/> :
               ""
