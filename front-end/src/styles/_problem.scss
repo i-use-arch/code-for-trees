@@ -64,6 +64,26 @@
       background-color: $primary-color;
     }
 
+    .editor-container {
+      position: relative;
+
+      .loading-icon {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        z-index: 99;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: none;
+      }
+    }
+
+    .overlay {
+      background-color: black;
+      pointer-events: none;
+    }
+  
     #ace-editor {
       background: rgba(white, .65);
 

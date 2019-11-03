@@ -3,10 +3,6 @@ import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-javascript";
-
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/theme-eclipse";
-import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-xcode";
 
 class Problem extends Component {
@@ -17,6 +13,12 @@ class Problem extends Component {
     this.state = {
       code: "",
       language: "python",
+      codeHeader: {
+        python: 'def solution(nums, target):',
+        java: 'public int[] solution(int[] nums, int target) {\n\n}',
+        javascript: 'var solution = function(nums, target) {\n\n}',
+      },
+      loading: false
     }
   }
 
@@ -26,6 +28,11 @@ class Problem extends Component {
 
   onChange = (code) => {
     this.setState({ code });
+  }
+
+  onSubmit = () => {
+    console.log(this.state.code);
+    this.setState({ loading: true });
   }
 
   render() { 
@@ -50,18 +57,23 @@ class Problem extends Component {
             <option value="java">Java</option>
             <option value="javascript">JavaScript</option>
           </select>
-          <div className="editor-container">
+          <div className={this.state.loading ? "editor-container overlay" : "editor-container"}>
+            {this.state.loading ? 
+              <img src="http://keywork.ir/img/default/wave.gif" className="loading-icon"/> :
+              ""
+            }
             <AceEditor
               mode={this.state.language}
               theme="xcode"
               width="100%"
               height="500px"
+              value={this.state.code === "" ? this.state.codeHeader[this.state.language] : this.state.code }
               showPrintMargin={false}
               editorProps={{ $blockScrolling: true }}
               onChange={this.onChange}
             />
           </div>
-          <button onClick={() => console.log(this.state.code)}>SUBMIT</button>
+          <button onClick={() => this.onSubmit()}>SUBMIT</button>
         </div>
       </div>
     );
