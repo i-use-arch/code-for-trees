@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-github";
@@ -25,14 +24,22 @@ class Problem extends Component {
           </div>
         </div>
         <div className="right-panel">
-          <AceEditor
-            mode="java"
-            theme="eclipse"
-            width="100%"
-            height="99.9%"
-            showPrintMargin={false}
-            editorProps={{ $blockScrolling: true }}
-          />
+          <select>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="go">Go</option>
+          </select>
+          <div className="editor-container">
+            <AceEditor
+              mode="java"
+              theme="eclipse"
+              width="100%"
+              height="500px"
+              showPrintMargin={false}
+              editorProps={{ $blockScrolling: true }}
+            />
+          </div>
+          <button>SUBMIT</button>
         </div>
       </div>
     );

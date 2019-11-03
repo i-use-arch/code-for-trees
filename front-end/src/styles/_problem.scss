@@ -48,7 +48,23 @@
     float: right;
     box-sizing: border-box;
     padding: 30px;
-    
+
+    select {
+      background: transparent;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 2px;
+      border: 1px solid black;
+
+      outline: none;
+      transition: .2s ease-in-out;
+      
+    }
+
+    .select-selected {
+      background-color: DodgerBlue;
+    }
+
     #ace-editor {
       background: rgba(white, .65);
 
@@ -56,6 +72,27 @@
         background: rgba($neutral-color, .1);
       }
     }
+
+    button {
+      background-color: transparent;
+      border-width: 1px;
+      border-color: transparent;
+      background-color: rgba(white, .95);
+      color: $primary-color;
+      border-radius: 2px;
+      transition: .2s ease-in-out;
+      padding: 10px;
+      outline: none;
+      font-family: $body-font;
+      float: right;
+      margin-top: 20px;
+    }
+  
+    button:hover { 
+      background-color: $primary-color;
+      color: white;
+    }
+  
   }
 
 
