@@ -16,11 +16,16 @@ class Problem extends Component {
     super(props);
     this.state = {
       code: "",
+      language: "python",
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.code === nextState.code;
+  }
+
   onChange = (code) => {
-    console.log(code);
+    this.setState({ code });
   }
 
   render() { 
@@ -40,14 +45,14 @@ class Problem extends Component {
           </div>
         </div>
         <div className="right-panel">
-          <select>
+          <select onChange={(e) => this.setState({ language: e.target.value })}>
             <option value="python">Python</option>
             <option value="java">Java</option>
             <option value="javascript">JavaScript</option>
           </select>
           <div className="editor-container">
             <AceEditor
-              mode="python"
+              mode={this.state.language}
               theme="xcode"
               width="100%"
               height="500px"
@@ -56,7 +61,7 @@ class Problem extends Component {
               onChange={this.onChange}
             />
           </div>
-          <button onClick={() => console.log("HERE", this.state.code)}>SUBMIT</button>
+          <button onClick={() => console.log(this.state.code)}>SUBMIT</button>
         </div>
       </div>
     );
