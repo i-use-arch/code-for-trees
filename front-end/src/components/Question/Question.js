@@ -13,7 +13,7 @@ export default function Question(props) {
   const { question, description } = props;
 
   return (
-    <Card style={{ margin: "1em" }}>
+    <Card className="question">
       <CardActionArea>
         <CardContent>
           <Typography
@@ -23,14 +23,6 @@ export default function Question(props) {
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             {question}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-          >
-            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -1,18 +1,10 @@
 #problems {
-  //   text-align: center;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // background: linear-gradient(#c3dee0, #e0fdff);
-  //   background-image: url("../images/background.png");
-  // background-image: url('https://i.pinimg.com/originals/07/a5/38/07a5382f6d64ffb2aec1f87df19c4db8.png');
+  box-sizing: border-box;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
 
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-attachment: fixed;
   height: 100vh;
-  // background-color: $primary-color;
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cc4c5131516629.565451f6bd878.png");
   display: flex;
   background-size: cover;
@@ -20,6 +12,19 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Montserrat, sans-serif";
+
+  .MuiPaper-root {
+    background-color: rgba(white, .9);
+  }
+
+  .right-card {
+    margin: 0px 15px;
+  }
+
+  .question {
+    margin: 0px 15px;
+    border-radius: 0px;
+  }
 
   .right-panel {
 
@@ -68,12 +73,12 @@
     }
 
     tr:nth-child(odd) {
-      background-color: $neutral-color;
+      background-color: rgba($neutral-color, .5);
     }
 
 
     tr:nth-child(1) {
-      background-color: $primary-color;
+      background-color: rgba($primary-color, .7);
     }
 
   }

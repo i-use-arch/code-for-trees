@@ -45,7 +45,6 @@ class Problems extends Component {
       new Entry(rank++, "Sanjay", "13"),
       new Entry(rank++, "Emily", "10"),
       new Entry(rank++, "Sarah", "6"),
-
     ]
 
     let result = [];
@@ -73,10 +72,19 @@ class Problems extends Component {
               <Grid item>
                 <Question question="Question 2" description="Description 2" />
               </Grid>
+              <Grid item>
+                <Question question="Question 2" description="Description 2" />
+              </Grid>
+              <Grid item>
+                <Question question="Question 2" description="Description 2" />
+              </Grid>
+              <Grid item>
+                <Question question="Question 2" description="Description 2" />
+              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={4}>
-            <Card style={{ margin: "1em" }}>
+            <Card className="right-card">
               <CardContent>
                 <div className="right-panel">
                   <h1>NUMBER OF TREES PLANTED</h1>
