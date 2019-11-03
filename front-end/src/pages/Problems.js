@@ -67,19 +67,19 @@ class Problems extends Component {
           <Grid item xs={8}>
             <Grid container direction="column">
               <Grid item>
-                <Question question="Question 1" description="Description 1" />
+                <Question question="Two Sum"/>
               </Grid>
               <Grid item>
-                <Question question="Question 2" description="Description 2" />
+                <Question question="Binary Tree Level Order Traversal"/>
               </Grid>
               <Grid item>
-                <Question question="Question 2" description="Description 2" />
+                <Question question="Invert Binary Tree" />
               </Grid>
               <Grid item>
-                <Question question="Question 2" description="Description 2" />
+                <Question question="Maximum Depth of Binary Tree" />
               </Grid>
               <Grid item>
-                <Question question="Question 2" description="Description 2" />
+                <Question question="Balanced Binary Tree" />
               </Grid>
             </Grid>
           </Grid>

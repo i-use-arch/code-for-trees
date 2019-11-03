@@ -7,6 +7,7 @@ import {
   CardContent,
   Typography
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export default function Question(props) {
   // const classes = useStyles();
@@ -41,13 +42,15 @@ export default function Question(props) {
         >
           Learn More
         </Button>
-        <Button
-          size="small"
-          color="primary"
-          style={{ float: "right", fontFamily: "Montserrat, sans-serif" }}
-        >
-          Solve
-        </Button>
+        <Link to="/Two-Sum">
+          <Button
+            size="small"
+            color="primary"
+            style={{ float: "right", fontFamily: "Montserrat, sans-serif" }}
+          >
+            Solve
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

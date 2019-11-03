@@ -24,6 +24,10 @@
   .question {
     margin: 0px 15px;
     border-radius: 0px;
+    
+    .MuiCardContent-root {
+      padding-bottom: 0px;
+    }
   }
 
   .right-panel {
