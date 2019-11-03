@@ -1,6 +1,6 @@
-@import '_variables';
-@import '_splash';
-@import '_problem';
+@import "_variables";
+@import "_splash";
+@import "_problem";
 
 ::selection {
   color: white;
@@ -10,3 +10,7 @@
 ::-webkit-scrollbar {
   width: 0px;
 }
+@import "_variables";
+@import "_splash";
+@import "_problems";
+@import "_navbar";

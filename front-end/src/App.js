@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Splash from "./pages/Splash";
 import Problem from "./pages/Problem";
 import Problems from "./pages/Problems";
+import Navbar from "./components/Navbar";
 import "./styles/main.scss";
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Splash />
-        {<Problem/>}
+        {<Problem />}
         {/* <Problems /> */}
       </div>
     );
