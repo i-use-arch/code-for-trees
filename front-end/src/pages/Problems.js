@@ -12,6 +12,55 @@ import {
 } from "@material-ui/core";
 
 class Problems extends Component {
+
+  state={}
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      numTrees: 6420,
+    }
+  }
+
+  renderTable = () => {
+
+    const Entry = class {
+      constructor(rank, name, trees) {
+        this.rank = rank;
+        this.name = name;
+        this.trees = trees;
+      }
+    }
+
+    let rank = 1;
+    const entries = [
+      new Entry("Rank", "Name", "Number of Trees"),
+      new Entry(rank++, "Joel 👑", "24"),
+      new Entry(rank++, "Sam", "21"),
+      new Entry(rank++, "Nathan", "19"),
+      new Entry(rank++, "David", "19"),
+      new Entry(rank++, "Lauren", "17"),
+      new Entry(rank++, "John", "16"),
+      new Entry(rank++, "Timothy", "15"),
+      new Entry(rank++, "Sanjay", "13"),
+      new Entry(rank++, "Emily", "10"),
+      new Entry(rank++, "Sarah", "6"),
+
+    ]
+
+    let result = [];
+    entries.map(entry => (
+      result.push(
+        <tr>
+          <td>{entry.rank}</td>
+          <td>{entry.name}</td>
+          <td>{entry.trees}</td>
+        </tr>
+      )
+    ));
+    return <table>{result}</table>;
+  }
+
   render() {
     return (
       <div id="problems">
@@ -28,14 +77,14 @@ class Problems extends Component {
           </Grid>
           <Grid item xs={4}>
             <Card style={{ margin: "1em" }}>
-              <CardHeader avatar={<Avatar>S</Avatar>} title="Sam Wang" />
               <CardContent>
-                <Typography style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  Username: abc
-                </Typography>
-                <Typography style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  Problems Solved: 0 / 2
-                </Typography>
+                <div className="right-panel">
+                  <h1>NUMBER OF TREES PLANTED</h1>
+                  <div className="separator">
+                    <h2>{this.state.numTrees}</h2>
+                  </div>
+                  {this.renderTable()}
+                </div>
               </CardContent>
             </Card>
           </Grid>

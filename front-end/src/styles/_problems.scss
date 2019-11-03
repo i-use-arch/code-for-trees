@@ -21,37 +21,61 @@
   background-attachment: fixed;
   font-family: "Montserrat, sans-serif";
 
-  //   h1 {
-  //     font-weight: lighter;
-  //     color: $secondary-color;
-  //     letter-spacing: 10px;
-  //   }
+  .right-panel {
 
-  //   button {
-  //     background-color: transparent;
-  //     border-style: solid;
-  //     border-width: 1px;
-  //     border-color: $secondary-color;
-  //     border-radius: 2px;
-  //     transition: 0.2s ease-in-out;
-  //     padding: 5px 10px;
-  //     outline: none;
-  //   }
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .separator::before, .separator::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid $secondary-color;
+    }
+    .separator::before {
+        margin-right: 25px;
+    }
+    .separator::after {
+        margin-left: 25px;
+    }
+  
+    h1, h2 {
+      text-align: center;
+    }
 
-  //   button:hover {
-  //     background-color: $primary-color;
-  //     color: white;
-  //     border-color: transparent;
-  //   }
+    h1 {
+      font-weight: lighter;
+      color: $secondary-color;
+      letter-spacing: 5px;
+      font-family: $header-font;
+      margin-bottom: 0px;
+    }
 
-  //   .login-button {
-  //     margin-top: 15px;
-  //   }
+    h2 {
+      font-weight: normal;
+      font-family: $body-font;
+    }
+  }
 
-  //   .text-container {
-  //     margin-top: -300px;
-  //     background-color: rgba(white, 0.4);
-  //     padding: 30px;
-  //     border-radius: 2px;
-  //   }
+  table {
+    width: 100%;
+    font-family: $body-font;
+    font-weight: lighter;
+    
+    td {
+      padding: 10px;
+    }
+
+    tr:nth-child(odd) {
+      background-color: $neutral-color;
+    }
+
+
+    tr:nth-child(1) {
+      background-color: $primary-color;
+    }
+
+  }
+
 }

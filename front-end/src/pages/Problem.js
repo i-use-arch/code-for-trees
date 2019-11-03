@@ -45,9 +45,9 @@ class Problem extends Component {
           <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
           <h2>Example</h2>
           <div className="example">
-            <p>Given <code>nums = [2, 7, 11, 15], target = 9</code>,</p>
+            <p>Given <code>nums = [2, 7, 11, 15], target = 9,</code></p>
 
-            <p>Because <code>nums[0] + nums[1] = 2 + 7 = 9</code>,</p>
+            <p>Because <code>nums[0] + nums[1] = 2 + 7 = 9,</code></p>
             <p><code>return [0, 1].</code></p>
           </div>
         </div>
@@ -59,7 +59,7 @@ class Problem extends Component {
           </select>
           <div className={this.state.loading ? "editor-container overlay" : "editor-container"}>
             {this.state.loading ? 
-              <img src="http://keywork.ir/img/default/wave.gif" className="loading-icon"/> :
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" className="loading-icon"/> :
               ""
             }
             <AceEditor
