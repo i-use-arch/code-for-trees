@@ -16,7 +16,7 @@
   h1 {
     font-weight: lighter;
     color: $secondary-color;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
   }
 
   button {
@@ -28,6 +28,7 @@
     transition: .2s ease-in-out;
     padding: 5px 10px;
     outline: none;
+    font-family: $body-font;
   }
 
   button:hover { 
@@ -41,7 +42,7 @@
   }
 
   p {
-    // font-family: $header-font;
+    font-family: $body-font;
   }
 
   .text-container {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Splash from "./pages/Splash";
+import Problem from "./pages/Problem";
 import Problems from "./pages/Problems";
 import "./styles/main.scss";
 
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <Splash />
-        <Problems />
+        {<Problem/>}
+        {/* <Problems /> */}
       </div>
     );
   }
