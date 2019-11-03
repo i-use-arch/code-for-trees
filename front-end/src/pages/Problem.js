@@ -34,29 +34,38 @@ class Problem extends Component {
   onSubmit = async () => {
     this.setState({ loading: true });
     console.log(this.state.code);
-    const url = "http://167.114.115.234:8080/submission/post";
-    const id = await fetch(url, {
+    const url = "http://maple.kirbyquerby.me:8080/submission/post";
+    const response = await fetch(url, {
       method: 'POST',
       body: this.state.code,
     });
-
+    console.log(response);
+    const id = await response.text();
     console.log(id);
-
-    setTimeout(() => this.setState({ success: this.state.code !== "", loading: false }), 2000);
+    // while(this.state.success)
+    // while(this.state.success === "")
+      setTimeout(() => this.checkSuccess(id), 250);
 
   }
 
   checkSuccess = async (id) => {
-    const getUrl = `http://167.114.115.234:8080/submission/${id}`;
+    const getUrl = `http://maple.kirbyquerby.me:8080/submission/${id}`;
     console.log(getUrl);
 
     const response = await fetch(getUrl);
+    console.log(response);
+
     const body = await response.json();
 
     console.log(body);
     console.log(body.output);
-
-    this.setState({ success: true, loading: false });
+    
+    if(body.output !== "" && body.out !== null) {
+      alert(body.output);
+      this.setState({ success: true, loading: false });
+    } else {
+      setTimeout(() => this.checkSuccess(id), 250);
+    }
   }
 
   getEditorClasses = () => {
