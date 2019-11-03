@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Splash from "./pages/Splash";
 import Problems from "./pages/Problems";
+import Navbar from "./components/Navbar";
 import "./styles/main.scss";
 
 class App extends Component {
@@ -8,7 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Splash />
+        {/* <Navbar /> */}
+        {/* <Splash /> */}
         <Problems />
       </div>
     );
