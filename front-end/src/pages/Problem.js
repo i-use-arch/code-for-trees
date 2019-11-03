@@ -32,15 +32,31 @@ class Problem extends Component {
   }
 
   onSubmit = async () => {
+    this.setState({ loading: true });
     console.log(this.state.code);
-    const url = "";
-    await fetch(url, {
+    const url = "http://167.114.115.234:8080/submission/post";
+    const id = await fetch(url, {
       method: 'POST',
       body: this.state.code,
     });
 
-    // setTimeout(refresh, 5000);
-    this.setState({ loading: true });
+    console.log(id);
+
+    setTimeout(() => this.setState({ success: this.state.code !== "", loading: false }), 2000);
+
+  }
+
+  checkSuccess = async (id) => {
+    const getUrl = `http://167.114.115.234:8080/submission/${id}`;
+    console.log(getUrl);
+
+    const response = await fetch(getUrl);
+    const body = await response.json();
+
+    console.log(body);
+    console.log(body.output);
+
+    this.setState({ success: true, loading: false });
   }
 
   getEditorClasses = () => {

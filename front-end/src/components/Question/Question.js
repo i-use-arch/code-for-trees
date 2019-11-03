@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 
 export default function Question(props) {
-  // const classes = useStyles();
   const { question, description } = props;
 
   return (
